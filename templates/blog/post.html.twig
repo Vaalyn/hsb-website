@@ -1,0 +1,7 @@
+<div class="card blog-post">
+    <div class="card-body">
+        <div class="card-subtitle text-muted mb-2">{{ post.date|format_date(locale='de') }}</div>
+
+        {{ post.content|markdown_to_html }}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% include 'header.html.twig' %}
+
+<div class="container pt-3">
+    <div class="row d-block d-md-none d-lg-none d-xl-none d-xxl-none">
+        <div class="col text-center">
+            <b>{% include 'sidebar/space-status.html.twig' %}</b>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-8">
+            {% include 'blog/blog.html.twig' %}
+        </div>
+
+        <div class="col-12 col-md-4">
+            {% include 'sidebar.html.twig' %}
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html.twig' %}
