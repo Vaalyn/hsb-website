@@ -6,5 +6,5 @@ namespace HackerspaceBielefeld\Website\Controller;
 
 class VereinController extends AbstractPageController
 {
-    protected const PAGE_CONTENT_FILENAME = 'verein.md';
+    public string $pageContentFilename = 'verein.md';
 }

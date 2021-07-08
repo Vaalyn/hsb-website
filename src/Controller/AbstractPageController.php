@@ -14,7 +14,7 @@ use Symfony\Component\Finder\Finder;
 
 abstract class AbstractPageController
 {
-    protected const PAGE_CONTENT_FILENAME = 'verein.md';
+    public string $pageContentFilename = '';
 
     public function __construct(
         protected Flash\Messages $flashMessages,
@@ -42,7 +42,7 @@ abstract class AbstractPageController
         $finder = new Finder();
         $finder->files()
             ->in(__DIR__ . '/../../content/page')
-            ->name(self::PAGE_CONTENT_FILENAME);
+            ->name($this->pageContentFilename);
 
         $pageContent = '';
 

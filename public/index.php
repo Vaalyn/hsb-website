@@ -26,10 +26,18 @@ $app->add(TwigMiddleware::create(
     $app,
     $container->get(Slim\Views\Twig::class)
 ));
+$app->addErrorMiddleware(false, true, true);
 
 $app->get('/[page/{page}]', Controller\IndexController::class);
 
-$app->get('/space/verein', Controller\VereinController::class);
+$app->get('/datenschutz', Controller\DatenschutzController::class);
+
+$app->get('/impressum', Controller\ImpressumController::class);
+
+$app->get('/info-fuer-gaeste', Controller\GaesteController::class);
+
 $app->get('/space', Controller\UeberUnsController::class);
+$app->get('/space/verein', Controller\VereinController::class);
+$app->get('/spenden', Controller\SpendenController::class);
 
 $app->run();
