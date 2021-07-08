@@ -1,4 +1,5 @@
 vendor/
-var/
+var/*
+!var/.gitignore
 
 .env
