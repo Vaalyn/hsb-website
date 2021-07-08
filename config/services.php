@@ -12,7 +12,7 @@ return [
     Slim\Views\Twig::class => function() {
         $twig = Slim\Views\Twig::create(
             __DIR__ . '/../templates',
-            [/*'cache' => __DIR__ . '/../var/cache'*/'debug' => true,],
+            ['cache' => __DIR__ . '/../var/cache'],
         );
 
         $twig->addExtension(new \Twig\Extra\Intl\IntlExtension());
