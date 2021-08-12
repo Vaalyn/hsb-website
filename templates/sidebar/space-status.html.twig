@@ -8,15 +8,21 @@
 </svg>
 
 <a href="https://status.space.bi/#/" title="Hackerspace Bielefeld Status Seite" target="_blank">
-{% if spaceStatus.open == false %}
-    <div class="alert alert-success d-flex align-items-center justify-content-center" role="alert">
+{% if spaceStatus.open == true %}
+    <div class="alert alert-success d-flex flex-column align-items-center justify-content-center" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
         <div>Der Space ist offen</div>
+        {% if spaceStatus.state.openstate == 'membersonly' %}
+            <small>Nur für Vereinsmitglieder geöffnet</small>
+        {% endif %}
     </div>
 {% else %}
-    <div class="alert alert-danger center d-flex align-items-center justify-content-center" role="alert">
+    <div class="alert alert-danger center d-flex flex-column align-items-center justify-content-center" role="alert">
         <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
         <div>Der Space ist geschlossen</div>
+        {% if spaceStatus.state.openstate == 'membersonly' %}
+            <small>Nur für Vereinsmitglieder geöffnet</small>
+        {% endif %}
     </div>
 {% endif %}
 </a>
